@@ -19,7 +19,7 @@ app.use("/assets", express.static(assetsPath));
 app.use("/uploads", express.static(__dirname + "/uploads"));
 
 // For Post Requests
-app.use(express.urlencoded());
+app.use(express.urlencoded({ extended: true }));
 
 // setting up view engine
 app.set("view engine", "ejs");
@@ -38,7 +38,7 @@ app.use(
       maxAge: 1000 * 60 * 100,
     },
     store: MongoStore.create({
-      mongoUrl: process.env.MONGODB,
+      MONGO_URL: process.env.MONGODB,
       autoRemove: "disabled",
     }),
   })
