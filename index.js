@@ -29,7 +29,7 @@ app.set("views", "./views");
 
 app.use(
   session({
-    name: "Placement Cell",
+    name: "placement_cell",
     // Change the secret before deployment
     secret: "blahblahblah",
     saveUninitialized: false,

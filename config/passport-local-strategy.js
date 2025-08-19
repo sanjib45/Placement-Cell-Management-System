@@ -60,7 +60,7 @@ passport.checkAuthentication = (req, res, next) => {
 
 passport.setAuthenticatedUser = function (req, res, next) {
   if (req.isAuthenticated()) {
-    res.locals.employee = req.employee;
+    res.locals.employee =  req.user;
   }
   next();
 };
